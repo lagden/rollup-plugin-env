@@ -1,0 +1,53 @@
+{
+  "name": "@tadashi/rollup-plugin-env",
+  "version": "0.1.0",
+  "description": "Injects environment variables",
+  "keywords": [
+    "rollup",
+    "plugin",
+    "inject",
+    "namespace",
+    "environment",
+    "variables"
+  ],
+  "main": "dist/env.cjs.js",
+  "scripts": {
+    "build": "rollup -c",
+    "pretest": "rm -rf test/__output && npm run build",
+    "test": "ava",
+    "posttest": "rm -rf test/__output",
+    "prepublish": "npm test"
+  },
+  "files": [
+    "dist",
+    "README.md"
+  ],
+  "repository": {
+    "type": "git",
+    "url": "git+ssh://git@github.com:lagden/rollup-plugin-env.git"
+  },
+  "author": "Thiago Lagden <lagden@gmail.com>",
+  "license": "MIT",
+  "bugs": {
+    "url": "https://github.com/lagden/rollup-plugin-env/issues"
+  },
+  "homepage": "https://github.com/lagden/rollup-plugin-env#readme",
+  "engines": {
+    "node": ">=14.0.0"
+  },
+  "devDependencies": {
+    "ava": "3.10.1",
+    "esm": "3.2.25",
+    "rollup": "2.22.2"
+  },
+  "esm": {
+    "cjs": {
+      "dedefault": true
+    }
+  },
+  "ava": {
+    "require": [
+      "esm"
+    ]
+  }
+}
