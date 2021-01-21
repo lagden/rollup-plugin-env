@@ -3,7 +3,7 @@
 Injects environment variables
 
 
-## Installation
+## Install
 
 ```
 npm i -D @tadashi/rollup-plugin-env
@@ -13,19 +13,19 @@ npm i -D @tadashi/rollup-plugin-env
 ## Usage
 
 ```js
+import envs from '@tadashi/rollup-plugin-env'
 import {rollup} from 'rollup'
-import envs from 'rollup-plugin-env'
 
 const {
-	SERVICE_API_ENDPOINT,
-	VERSION
+  ENDPOINT,
+  VERSION
 } = process.env
 
 rollup({
   entry: 'src/index.js',
   plugins: [
     envs(APP_NAMESPACE, {
-      SERVICE_API_ENDPOINT,
+      ENDPOINT,
       VERSION
     })
   ]
