@@ -12,10 +12,11 @@
   ],
   "main": "dist/index.cjs.js",
   "scripts": {
+    "prebuild": "npm test",
     "build": "rollup -c",
-    "pretest": "rm -rf __fixtures__/out*.js && npm run build",
+    "coverage": "jest test --coverage",
     "test": "jest",
-    "prepublishOnly": "npm test"
+    "prepublishOnly": "npm run build"
   },
   "files": [
     "dist",
